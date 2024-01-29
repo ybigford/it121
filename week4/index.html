@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<h1>Functions & validation</h1>
+
+<div class="wrapper">
+    <form id="form" class="form">
+
+
+      <div class="form2">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" placeholder="Enter your first name">
+        <small> </small>
+      </div>
+
+      <div class="form2">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" placeholder="Enter your Last name">
+        <small> </small>
+      </div>
+
+      <div class="form2">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <small> </small>
+      </div>
+
+      <button>Submit</button>
+
+
+    </form>
+
+  </div>
+<script>
+
+let form = document.querySelector('#form');
+let fname = document.querySelector('#fname');
+let lname = document.querySelector('#lname');
+let passowrd = document.querySelector('#password');
+
+
+function resultFalse (input, message) {
+  let form2 = input.parentElement;
+  // form2.className = 'form2 error';
+  let small = form2.querySelector('small');
+  small.innerText = message;
+}
+
+
+function resultTrue (input) {
+  let form2 = input.parentElement;
+  let small = form2.querySelector('small');
+  small.innerText = " ";
+}
+
+
+function validateForm (inputA) {
+  inputA.forEach((input) => {
+    if(input.value.trim() === '') {
+      resultFalse(input, `${getFieldName(input)} is required`);
+      
+    } else {
+      resultTrue (input);
+    }
+  })
+
+}
+
+
+
+function validatePassword (input, min) {
+
+let lowercase = /[a-z]/;
+let uppercase = /[A-Z]/;
+
+  if (input.value.length < min) {
+    resultFalse(input, `${getFieldName(input)} must be at least 8 characters`);
+  } 
+
+  else if (!input.value.match(lowercase)) {
+    resultFalse(input, `${getFieldName(input)} must contain at least 1 lowercase letter`);
+  } 
+  
+  else if (!input.value.match(uppercase)) {
+    resultFalse(input, `${getFieldName(input)} must contain at least 1 uppercase letter`);
+  } else {
+    resultTrue (input);
+  }
+
+
+  
+}
+
+
+function getFieldName (input) {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  validateForm ([fname, lname, passowrd]);
+  validatePassword(passowrd, 8);
+  
+})
+
+
+</script>
+
+
+
+</body>
+</html> 
+
+
+<!-- // Create a function called validatePassword to validate passwords entered in the form
+// Valid passwords should have at least 8 characters, at least one uppercase letter, and at  least one lowercase letter.
+// Invoke this new function from validateForm function,
+// Update validateForm to:
+// validate user-entered password
+// verify first and last name values are NOT missing
+// Show a message is any form entries are invalid
+// Show a message if all 3 fields are valid
+// Your validation can stop and show the failure message when the first invalid condition is met  -->
