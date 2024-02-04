@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+<h1>Robo Dealer</h1>
+
+  <!-- <button id="btn" onclick="dealHand();">Deal Hand</button> -->
+  <button id="btn">Deal Hand</button>
+
+<hr><div id="card_hand"></div>
+
+<script>
+
+
+  /* define Card object and deck of cards here */
+  function card(value, suit) {
+    this.value = value;
+    this.suit = suit;
+  }
+
+  let deck = [
+    new card('king', 'of spade'),
+    new card('queen', 'of spade'),
+    new card('jack', 'of spade'),
+    new card('ace', 'of spade'),
+    new card('2', 'of spade'),
+    new card('3', 'of spade'),
+    new card('4', 'of spade'),
+    new card('5', 'of spade'),
+    new card('6', 'of spade'),
+    new card('7', 'of spade'),
+    new card('8', 'of spade'),
+    new card('9', 'of spade'),
+    new card('10', 'of spade'),
+
+
+    new card('king', 'of club'),
+    new card('queen', 'of club'),
+    new card('jack', 'of club'),
+    new card('ace', 'of club'),
+    new card('2', 'of club'),
+    new card('3', 'of club'),
+    new card('4', 'of club'),
+    new card('5', 'of club'),
+    new card('6', 'of club'),
+    new card('7', 'of club'),
+    new card('8', 'of club'),
+    new card('9', 'of club'),
+    new card('10', 'of club'),
+
+    new card('king', 'of diamond'),
+    new card('queen', 'of diamond'),
+    new card('jack', 'of diamond'),
+    new card('ace', 'of diamond'),
+    new card('2', 'of diamond'),
+    new card('3', 'of diamond'),
+    new card('4', 'of diamond'),
+    new card('5', 'of diamond'),
+    new card('6', 'of diamond'),
+    new card('7', 'of diamond'),
+    new card('8', 'of diamond'),
+    new card('9', 'of diamond'),
+    new card('10', 'of diamond'),
+
+    new card('king', 'of heart'),
+    new card('queen', 'of heart'),
+    new card('jack', 'of heart'),
+    new card('ace', 'of heart'),
+    new card('2', 'of heart'),
+    new card('3', 'of heart'),
+    new card('4', 'of heart'),
+    new card('5', 'of heart'),
+    new card('6', 'of heart'),
+    new card('7', 'of heart'),
+    new card('8', 'of heart'),
+    new card('9', 'of heart'),
+    new card('10', 'of heart')
+  ];
+
+
+  const dealHand = () => {
+
+    /* code to deal a card hand goes here */
+
+   
+      let showCard = Math.floor(Math.random() * 52);
+    
+      return showCard;   
+       
+  }
+   
+    
+    
+    // update 'card_hand' DIV with appropriate information
+   
+    // $("#card_hand").html(dealHand());
+
+    document.getElementById('btn').onclick = function(){
+      
+      let i = dealHand();
+      let display1 = deck[i];
+      let display2 = deck[Math.floor(Math.random() * 52)];
+      let display3 = deck[Math.floor(Math.random() * 52)];
+      let display4 = deck[Math.floor(Math.random() * 52)];
+      let display5 = deck[Math.floor(Math.random() * 52)];
+    
+      
+    document.getElementById('card_hand').innerHTML = `<p>${display1.value} ${display1.suit}</p>` + `<p>${display2.value} ${display2.suit}</p>` +
+                                                     `<p>${display3.value} ${display3.suit}</p>`+ `<p>${display4.value} ${display4.suit}</p>` +
+                                                     `<p>${display5.value} ${display5.suit}</p>` ;
+   
+    }
+    
+
+    // return false; // prevent page reload
+  // }
+
+</script>
+
+</body>
+</html>
