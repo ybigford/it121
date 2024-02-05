@@ -31,6 +31,7 @@
       </div>
 
       <button>Submit</button>
+      <small id="welcome"> </small>
 
 
     </form>
@@ -42,7 +43,7 @@ let form = document.querySelector('#form');
 let fname = document.querySelector('#fname');
 let lname = document.querySelector('#lname');
 let passowrd = document.querySelector('#password');
-
+let welcome = document.querySelector('#welcome');
 
 function resultFalse (input, message) {
   let form2 = input.parentElement;
@@ -58,6 +59,12 @@ function resultTrue (input) {
 }
 
 
+function resultTrue2 (input) {
+  
+  welcome.innerText = "Welcome! Thank you for registering!";
+}
+
+
 function validateForm (inputA) {
   inputA.forEach((input) => {
     if(input.value.trim() === '') {
@@ -65,7 +72,11 @@ function validateForm (inputA) {
       
     } else {
       resultTrue (input);
+    
     }
+
+
+
   })
 
 }
@@ -108,6 +119,9 @@ form.addEventListener('submit', (e) => {
   validatePassword(passowrd, 8);
   
 })
+
+
+
 
 
 </script>
