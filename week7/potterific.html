@@ -1,0 +1,436 @@
+<html>
+    <head>
+        <script
+                src="https://code.jquery.com/jquery-3.7.1.min.js"
+                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+                crossorigin="anonymous"></script>
+    </head>
+    <style>
+        .over {
+            background-color: orange;
+        }
+        .selected {
+            background-color: green;
+        }
+    </style>
+
+    <body>
+        <div id="buttons"></div>
+
+        <table border='1'>
+            <tr id="tr1">
+                <th id="name1" style="visibility:hidden;">name</th>
+                <th id="role1" style="visibility:hidden;">role</th>
+                <th><button id="btn1" style="background-color:green;">Gryffindor</button></th>
+                <th id="gender1" style="visibility:hidden;">gender</th>
+                <th id="alignment1" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr2">
+                <th id="name2" style="visibility:hidden;">name</th>
+                <th id="role2" style="visibility:hidden;">role</th>
+                <th><button id="btn2" style="background-color:pink;">Hufflepuff</button></th>
+                <th id="gender2" style="visibility:hidden;">gender</th>
+                <th id="alignment2" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr3">
+                <th id="name3" style="visibility:hidden;">name</th>
+                <th id="role3" style="visibility:hidden;">role</th>
+                <th><button id="btn3" style="background-color:green;">Gryffindor</button></th>
+                <th id="gender3" style="visibility:hidden;">gender</th>
+                <th id="alignment3" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr4">
+                <th id="name4" style="visibility:hidden;">name</th>
+                <th id="role4" style="visibility:hidden;">role</th>
+                <th><button id="btn4" style="background-color:green;">Gryffindor</button></th>
+                <th id="gender4" style="visibility:hidden;">gender</th>
+                <th id="alignment4" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr5">
+                <th id="name5" style="visibility:hidden;">name</th>
+                <th id="role5" style="visibility:hidden;">role</th>
+                <th><button id="btn5" style="background-color:green;">Gryffindor</button></th>
+                <th id="gender5" style="visibility:hidden;">gender</th>
+                <th id="alignment5" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr6">
+                <th id="name6" style="visibility:hidden;">name</th>
+                <th id="role6" style="visibility:hidden;">role</th>
+                <th><button id="btn6" style="background-color:pink;">Hufflepuff</button></th>
+                <th id="gender6" style="visibility:hidden;">gender</th>
+                <th id="alignment6" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr7">
+                <th id="name7" style="visibility:hidden;">name</th>
+                <th id="role7" style="visibility:hidden;">role</th>
+                <th><button id="btn7" style="background-color:green;">Gryffindor</button></th>
+                <th id="gender7" style="visibility:hidden;">gender</th>
+                <th id="alignment7" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr8">
+                <th id="name8" style="visibility:hidden;">name</th>
+                <th id="role8" style="visibility:hidden;">role</th>
+                <th><button id="btn8" style="background-color:green;">Gryffindor</button></th>
+                <th id="gender8" style="visibility:hidden;">gender</th>
+                <th id="alignment8" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr9">
+                <th id="name9" style="visibility:hidden;">name</th>
+                <th id="role9" style="visibility:hidden;">role</th>
+                <th><button id="btn9" style="background-color:yellow;">Slytherin</button></th>
+                <th id="gender9" style="visibility:hidden;">gender</th>
+                <th id="alignment9" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr10">
+                <th id="name10" style="visibility:hidden;">name</th>
+                <th id="role10" style="visibility:hidden;">role</th>
+                <th><button id="btn10" style="background-color:green;">Gryffindor</button></th>
+                <th id="gender10" style="visibility:hidden;">gender</th>
+                <th id="alignment10" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr11">
+                <th id="name11" style="visibility:hidden;">name</th>
+                <th id="role11" style="visibility:hidden;">role</th>
+                <th><button id="btn11" style="background-color:lightsalmon;">Ravenclaw</button></th>
+                <th id="gender11" style="visibility:hidden;">gender</th>
+                <th id="alignment11" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr12">
+                <th id="name12" style="visibility:hidden;">name</th>
+                <th id="role12" style="visibility:hidden;">role</th>
+                <th><button id="btn12" style="background-color:yellow;">Slytherin</button></th>
+                <th id="gender12" style="visibility:hidden;">gender</th>
+                <th id="alignment12" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr13">
+                <th id="name13" style="visibility:hidden;">name</th>
+                <th id="role13" style="visibility:hidden;">role</th>
+                <th><button id="btn13" style="background-color:yellow;">Slytherin</button></th>
+                <th id="gender13" style="visibility:hidden;">gender</th>
+                <th id="alignment13" style="visibility:hidden;">alignment</th>
+            </tr>
+
+            <tr id="tr14">
+                <th id="name14" style="visibility:hidden;">name</th>
+                <th id="role14" style="visibility:hidden;">role</th>
+                <th><button id="btn14" style="background-color:yellow;">Slytherin</button></th>
+                <th id="gender14" style="visibility:hidden;">gender</th>
+                <th id="alignment14" style="visibility:hidden;">alignment</th>
+            </tr>
+        </table>
+
+        <button id="reset" style="background-color:red;">Reset</button>
+
+    </body>
+        
+        <script>
+        // list of characters
+        let characters = [
+        {name:"Albus Dumbledore", role:"staff", house:"Gryffindor",gender:"m",alignment:"good"},    
+        {name:"Nymphadora Tonks", role:"student", house:"Hufflepuff",gender:"f",alignment:"good"},    
+        {name:"Ron Weasley", role:"student", house:"Gryffindor",gender:"m",alignment:"good"},    
+        {name:"Ginny Weasley", role:"student", house:"Gryffindor",gender:"f",alignment:"good"},    
+        {name:"Hermione Granger", role:"student", house:"Gryffindor",gender:"f",alignment:"good"},    
+        {name:"Mad-eye Moody", role:"staff", house:"Hufflepuff",gender:"m",alignment:"good"},    
+        {name:"Prof McGonagall", role:"staff", house:"Gryffindor",gender:"f",alignment:"good"},    
+        {name:"Harry Potter", role:"student", house:"Gryffindor",gender:"m",alignment:"good"},    
+        {name:"Draco Malfoy", role:"student", house:"Slytherin",gender:"m",alignment:"evil"},    
+        {name:"Hagrid", role:"staff", house:"Gryffindor",gender:"m",alignment:"good"},    
+        {name:"Luna Lovegood", role:"student", house:"Ravenclaw",gender:"f",alignment:"good"},    
+        {name:"Voldemort", role:"staff", house:"Slytherin",gender:"m",alignment:"evil"},    
+        {name:"Bellatrix Lestrange", role:"student", house:"Slytherin",gender:"f",alignment:"evil"},           
+        {name:"Severus Snape", role:"staff", house:"Slytherin",gender:"m",alignment:"good"}
+        ];
+
+        $(document).ready(function(){
+
+        /*
+        - add a button for each 'house' value
+        - add table row for each character
+        - set visible rows to alternating background color
+            
+        - add click handler to show only rows matching selected 'house'. Enable buttons to call this handler. 
+        
+        - add click handler to reset table 
+        */
+
+            
+            $('#btn1').click(function() {
+               
+                $('#name1').text("Albus Dumbledore").css('visibility', 'visible');
+                $('#role1').text("Staff").css('visibility', 'visible');
+                $('#gender1').text("Male").css('visibility', 'visible');
+                $('#alignment1').text("Good").css('visibility', 'visible');
+                $('#tr1').css('color', 'red');
+                $('#btn1').css('background-color', 'green');
+               
+            });
+            
+
+
+            $('#btn1').click(function() {
+               
+                $('#name1').toggle("Albus Dumbledore");
+                $('#role1').toggle("Staff");
+                $('#gender1').toggle("Male");
+                $('#alignment1').toggle("Good");
+                // e.preventDefault();
+                // return false;
+                
+            });
+
+
+
+            $('#btn2').click(function() {
+                $('#name2').text("Nymphadora Tonks").css('visibility', 'visible');
+                $('#role2').text("Student").css('visibility', 'visible');
+                $('#gender2').text("Female").css('visibility', 'visible');
+                $('#alignment2').text("Good").css('visibility', 'visible');
+                $('#tr2').css('color', 'orange');
+                $('#btn2').css('background-color', 'pink');
+                
+            });
+            
+
+            $('#btn2').click(function() {
+                $('#name2').toggle("Nymphadora Tonks");
+                $('#role2').toggle("Student");
+                $('#gender2').toggle("Female");
+                $('#alignment2').toggle("Good");
+            });
+
+
+            $('#btn3').click(function() {
+                $('#name3').text("Ron Weasley").css('visibility', 'visible');
+                $('#role3').text("Student").css('visibility', 'visible');
+                $('#gender3').text("Male").css('visibility', 'visible');
+                $('#alignment3').text("Good").css('visibility', 'visible');
+                $('#tr3').css('color', 'brown');
+                $('#btn3').css('background-color', 'green');
+            });
+
+            $('#btn3').click(function() {
+                $('#name3').toggle("Ron Weasley");
+                $('#role3').toggle("Student");
+                $('#gender3').toggle("Male");
+                $('#alignment3').toggle("Good");
+            });
+
+            $('#btn4').click(function() {
+                $('#name4').text("Ginny Weasley").css('visibility', 'visible');
+                $('#role4').text("Student").css('visibility', 'visible');
+                $('#gender4').text("Female").css('visibility', 'visible');
+                $('#alignment4').text("Good").css('visibility', 'visible');
+                $('#tr4').css('color', 'purple');
+                $('#btn4').css('background-color', 'green');
+            });
+
+            $('#btn4').click(function() {
+                $('#name4').toggle("Ginny Weasley");
+                $('#role4').toggle("Student");
+                $('#gender4').toggle("Female");
+                $('#alignment4').toggle("Good");
+            });
+
+
+            $('#btn5').click(function() {
+                $('#name5').text("Hermione Granger").css('visibility', 'visible');
+                $('#role5').text("Student").css('visibility', 'visible');
+                $('#gender5').text("Female").css('visibility', 'visible');
+                $('#alignment5').text("Good").css('visibility', 'visible');
+                $('#tr5').css('color', 'hotpink');
+                $('#btn5').css('background-color', 'green');
+            });
+
+            $('#btn5').click(function() {
+                $('#name5').toggle("Hermione Granger");
+                $('#role5').toggle("Student");
+                $('#gender5').toggle("Female");
+                $('#alignment5').toggle("Good");
+            });
+
+
+            $('#btn6').click(function() {
+                $('#name6').text("Mad-eye Moody").css('visibility', 'visible');
+                $('#role6').text("Staff").css('visibility', 'visible');
+                $('#gender6').text("Male").css('visibility', 'visible');
+                $('#alignment6').text("Good").css('visibility', 'visible');
+                $('#tr6').css('color', 'olive');
+                $('#btn6').css('background-color', 'pink');
+            });
+
+            $('#btn6').click(function() {
+                $('#name6').toggle("Mad-eye Moody");
+                $('#role6').toggle("Staff");
+                $('#gender6').toggle("Male");
+                $('#alignment6').toggle("Good");
+            });
+
+
+            $('#btn7').click(function() {
+                $('#name7').text("Prof McGonagall").css('visibility', 'visible');
+                $('#role7').text("Staff").css('visibility', 'visible');
+                $('#gender7').text("Female").css('visibility', 'visible');
+                $('#alignment7').text("Good").css('visibility', 'visible');
+                $('#tr7').css('color', 'brown');
+                $('#btn7').css('background-color', 'green');
+            });
+
+            $('#btn7').click(function() {
+                $('#name7').toggle("Prof McGonagall");
+                $('#role7').toggle("Staff");
+                $('#gender7').toggle("Female");
+                $('#alignment7').toggle("Good");
+            });
+
+
+            $('#btn8').click(function() {
+                $('#name8').text("Harry Potter").css('visibility', 'visible');
+                $('#role8').text("Student").css('visibility', 'visible');
+                $('#gender8').text("Male").css('visibility', 'visible');
+                $('#alignment8').text("Good").css('visibility', 'visible');
+                $('#tr8').css('color', 'indigo');
+                $('#btn8').css('background-color', 'green');
+            });
+
+            $('#btn8').click(function() {
+                $('#name8').toggle("Harry Potter");
+                $('#role8').toggle("Student");
+                $('#gender8').toggle("Male");
+                $('#alignment8').toggle("Good");
+            });
+
+
+            $('#btn9').click(function() {
+                $('#name9').text("Draco Malfoy").css('visibility', 'visible');
+                $('#role9').text("Student").css('visibility', 'visible');
+                $('#gender9').text("Male").css('visibility', 'visible');
+                $('#alignment9').text("evil").css('visibility', 'visible');
+                $('#tr9').css('color', 'maroon');
+                $('#btn9').css('background-color', 'yellow');
+            });
+
+            $('#btn9').click(function() {
+                $('#name9').toggle("Draco Malfoy");
+                $('#role9').toggle("Student");
+                $('#gender9').toggle("Male");
+                $('#alignment9').toggle("evil");
+            });
+
+
+            $('#btn10').click(function() {
+                $('#name10').text("Hagrid").css('visibility', 'visible');
+                $('#role10').text("Staff").css('visibility', 'visible');
+                $('#gender10').text("Male").css('visibility', 'visible');
+                $('#alignment10').text("Good").css('visibility', 'visible');
+                $('#tr10').css('color', 'navy');
+                $('#btn10').css('background-color', 'green');
+            });
+
+            $('#btn10').click(function() {
+                $('#name10').toggle("Hagrid");
+                $('#role10').toggle("Staff");
+                $('#gender10').toggle("Male");
+                $('#alignment10').toggle("Good");
+            });
+
+            $('#btn11').click(function() {
+                $('#name11').text("Luna Lovegood").css('visibility', 'visible');
+                $('#role11').text("Student").css('visibility', 'visible');
+                $('#gender11').text("Female").css('visibility', 'visible');
+                $('#alignment11').text("Good").css('visibility', 'visible');
+                $('#tr11').css('color', 'mediumvioletred');
+                $('#btn11').css('background-color', 'lightsalmon');
+            });
+
+            $('#btn11').click(function() {
+                $('#name11').toggle("Luna Lovegood");
+                $('#role11').toggle("Student");
+                $('#gender11').toggle("Female");
+                $('#alignment11').toggle("Good");
+            });
+
+
+
+            $('#btn12').click(function() {
+                $('#name12').text("Voldemort").css('visibility', 'visible');
+                $('#role12').text("Staff").css('visibility', 'visible');
+                $('#gender12').text("Male").css('visibility', 'visible');
+                $('#alignment12').text("evil").css('visibility', 'visible');
+                $('#tr12').css('color', 'darkred');
+                $('#btn12').css('background-color', 'yellow');
+            });
+
+            $('#btn12').click(function() {
+                $('#name12').toggle("Voldemort");
+                $('#role12').toggle("Staff");
+                $('#gender12').toggle("Male");
+                $('#alignment12').toggle("evil");
+            });
+
+
+
+            $('#btn13').click(function() {
+                $('#name13').text("Bellatrix Lestrange").css('visibility', 'visible');
+                $('#role13').text("Student").css('visibility', 'visible');
+                $('#gender13').text("Female").css('visibility', 'visible');
+                $('#alignment13').text("evil").css('visibility', 'visible');
+                $('#tr13').css('color', 'blue');
+                $('#btn13').css('background-color', 'yellow');
+            });
+
+            $('#btn13').click(function() {
+                $('#name13').toggle("Bellatrix Lestrange");
+                $('#role13').toggle("Student");
+                $('#gender13').toggle("Female");
+                $('#alignment13').toggle("evil");
+            });
+
+
+            $('#btn14').click(function() {
+                $('#name14').text("Severus Snape").css('visibility', 'visible');
+                $('#role14').text("Staff").css('visibility', 'visible');
+                $('#gender14').text("Male").css('visibility', 'visible');
+                $('#alignment14').text("Good").css('visibility', 'visible');
+                $('#tr14').css('color', 'seagreen');
+                $('#btn14').css('background-color', 'yellow');
+            });
+
+            $('#btn14').click(function() {
+                $('#name14').toggle("Severus Snape");
+                $('#role14').toggle("Staff");
+                $('#gender14').toggle("Male");
+                $('#alignment14').toggle("Good");
+            });
+
+
+       
+
+
+
+
+         
+
+            $("#reset").click(function() {
+                location.reload(true);
+            });   
+                
+        
+          
+
+        });
+
+        </script>
+</html>
