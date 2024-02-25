@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url("images/sky.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#weatherContainer {
+    width: 1000px;
+    margin: 0 20px 0 auto;
+}
+
+
+#iconsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+/* #cityInput {
+    margin-left: 30px;
+
+} */
+
+a {
+    text-decoration: none;
+}
+
+
+footer {
+    height: 60px;
+    line-height: 60px;
+    background: #E0F4FF;
+    clear: both;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+footer li {
+    justify-content: center;
+    margin: 0 15px;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+button {
+    background-color: #BBE2EC;
+    border-color: #40A2E3;
+    border-radius: 3px;
+}
