@@ -1,5 +1,15 @@
 {
+  "name": "json",
+  "version": "1.0.0",
+  "description": "node hw",
+  "main": "index.js",
   "dependencies": {
     "index.js": "^0.0.3"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yapa bigford",
+  "license": "ISC"
 }
